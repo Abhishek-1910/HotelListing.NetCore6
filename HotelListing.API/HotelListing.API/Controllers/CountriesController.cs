@@ -33,12 +33,14 @@ namespace HotelListing.API.Controllers
         {
             var country = await _context.Countries.FindAsync(id);
 
-            if (country == null)
-            {
-                return NotFound();
-            }
+            //if (country == null)
+            //{
+            //    return NotFound();
+            //}
 
-            return country;
+            // return country;
+
+            return country == null ? NotFound() : country;
         }
 
         // PUT: api/Countries/5
